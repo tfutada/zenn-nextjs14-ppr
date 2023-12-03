@@ -1,7 +1,11 @@
-import { cookies } from 'next/headers'
+import {cookies} from 'next/headers'
 
 export default async function Cart() {
     const cookieStore = cookies()
     const session = cookieStore.get('session')
-    return <div>Shopping Cart for session</div>
+
+    // Let's create an artificial delay
+    await new Promise(resolve => setTimeout(resolve, 10_000));
+
+    return <div>AAAAAAAAAAAAAAAA</div>
 }
