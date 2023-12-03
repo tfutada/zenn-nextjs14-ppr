@@ -5,7 +5,7 @@ export default async function Cart() {
     const session = cookieStore.get('session')
 
     // Let's create an artificial delay
-    await new Promise(resolve => setTimeout(resolve, 10_000));
+    await new Promise(resolve => setTimeout(resolve, 3_000));
 
     return <div>AAAAAAAAAAAAAAAA</div>
 }
