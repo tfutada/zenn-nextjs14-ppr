@@ -4,8 +4,17 @@ export default async function Cart() {
     const cookieStore = cookies()
     const session = cookieStore.get('session')
 
-    // Let's create an artificial delay
-    await new Promise(resolve => setTimeout(resolve, 3_000));
+    const data: string = await new Promise(resolve => {
+        setTimeout(() => {
+            const currentTime = new Date().toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+            });
+            resolve("AAABBBCCC> " + currentTime);
+        }, 3_000);
+    });
 
-    return <div>AAAAAAAAAAAAAAAA</div>
+    // Now 'data' contains the response from the Promise
+    // We can use it in the returned JSX
+    return <div>{data}</div>;
 }
