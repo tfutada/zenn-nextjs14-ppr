@@ -1,7 +1,7 @@
 import {Suspense} from "react";
 import Cart from "@/app/Cart";
 
-// export const revalidate = 60;
+export const revalidate = 60;
 
 export default function Page() {
     const currentTime = new Date().toLocaleTimeString('en-US', {
